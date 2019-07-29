@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
- * print_number - print integers
- * @n: parameter
+ * print_d - call function printdx
+ * @print: va_list
  * Return: the count of print
  */
 int print_d(va_list print)
@@ -15,27 +15,41 @@ int print_d(va_list print)
 	return (c);
 }
 /**
- * print_number - print integers
- * @n: parameter
+ * print_dx - print integers
+ * @n: integer passed
  * Return: the count of print
+ *
  */
 int print_dx(int n)
 {
-	unsigned int m = n;
+	unsigned int m, d, c;
+	int count = 0;
 
 	if (n < 0)
 	{
-		_putchar('-');
-		m = m * -1;
+		_putchar(45);
+		m = n * -1;
+		count++;
 	}
-
-	if ((m / 10) > 0)
+	else
 	{
-	return(print_dx(m / 10) + 1);
-
+		m = n;
 	}
 
-	_putchar((m % 10) + '0');
+	d = m;
+	c = 1;
 
-	return (0);
+	while (d > 9)
+	{
+		d /= 10;
+		c *= 10;
+		count++;
+	}
+
+	for (; c >= 1; c /= 10)
+	{
+		_putchar(((m / c) % 10) + 48);
+		count++;
+	}
+	return (count);
 }

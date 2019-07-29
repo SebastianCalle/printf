@@ -33,7 +33,6 @@ int _printf(const char * const format, ...)
 
 	i++;
 	}
-	printf("\n");
 	va_end(print);
 	return (len);
 }
