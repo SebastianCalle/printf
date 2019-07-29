@@ -13,9 +13,9 @@ int check_case(int i, const char * const format, va_list print)
 	int j, len;
 	print_f pp[] = {
 		{"%c", print_c},
-		{"%i", print_i},
-		{"%d", print_d},
 		{"%s", print_s},
+/*		{"%i", print_i},*/
+		{"%d", print_d},
 	};
 
 	j = 0;

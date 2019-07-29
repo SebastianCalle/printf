@@ -22,6 +22,7 @@ int print_s(va_list print);
 int print_fl(va_list print);
 int print_i(va_list print);
 int print_d(va_list print);
+int print_dx(int n);
 int _puts(char *str);
 int _putchar(char c);
 int _strlen(char *s);
