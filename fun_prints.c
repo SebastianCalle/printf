@@ -1,4 +1,3 @@
-#include <stdarg.h>
 #include "holberton.h"
 /**
  * print_c - print character

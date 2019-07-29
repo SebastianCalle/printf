@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 #include <limits.h>
 int _printf(const char * const format, ...);
 int check_case(int i, const char * const format, va_list print);

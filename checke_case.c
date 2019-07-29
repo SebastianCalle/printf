@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include "holberton.h"
 /**
  * check_case - check the case of %

@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include "holberton.h"
 /**
  * _printf - print anything
