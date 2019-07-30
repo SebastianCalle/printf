@@ -18,15 +18,16 @@ int _printf(const char * const format, ...)
 		{
 			_putchar(format[i]);
 			len++;
+			i++;
 		}
 		if (format[i] == '%')
 		{
 			len += check_case(i, format, print);
 			i++;
-
 		}
+		if (format[i - 1] == '%' && format[i] == '\0')
+			return (-1);
 
-	i++;
 	}
 	va_end(print);
 	return (len);
