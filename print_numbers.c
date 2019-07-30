@@ -1,57 +1,49 @@
 #include "holberton.h"
 /**
- * print_d - call function printdx
- * @print: va_list
- * Return: the count of print
+ * print_d - Entry point
+ *@print: the integer to print
+ * Return: no return
  */
 int print_d(va_list print)
 {
-	int m = va_arg(print, int);
-	int c;
+	int i, len, r, l;
+	unsigned int abs, num, numt;
+	int n = va_arg(print, int);
 
-	c = 0;
-	c = print_dx(m);
-
-	return (c);
-}
-/**
- * print_dx - print integers
- * @n: integer passed
- * Return: the count of print
- *
- */
-int print_dx(int n)
-{
-	unsigned int m, d, c;
-	int count = 0;
-
+	len = 0;
+	i = 0;
+	r = 1;
+	l = 1;
 	if (n < 0)
 	{
-		_putchar(45);
-		m = n * -1;
-		count++;
-	}
-	else
+		_putchar('-');
+		len++;
+		abs = -n;
+	} else
 	{
-		m = n;
+		abs = n;
 	}
 
-	d = m;
-	c = 1;
-
-	while (d > 9)
+	num = abs;
+	while (num > 0)
 	{
-		d /= 10;
-		c *= 10;
-		count++;
+		num /= 10;
+		i++;
 	}
 
-	for (; c >= 1; c /= 10)
+	while (r < i)
 	{
-		_putchar(((m / c) % 10) + 48);
-		count++;
+		l *= 10;
+		r++;
 	}
-	return (count);
+	while (l >= 1)
+	{
+		numt = (abs / l) % 10;
+		_putchar(numt + '0');
+		len++;
+		l /= 10;
+	}
+	return (len);
 }
 /**
  * print_b - convert integer to binary
