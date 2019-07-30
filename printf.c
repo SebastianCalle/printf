@@ -21,14 +21,20 @@ int _printf(const char * const format, ...)
 		}
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '\0')
+			if (format[i + 1] == '%')
+			{
+				len++;
+				_putchar('%');
+			}
+			else if (format[i + 1] == '\0')
 				return (-1);
 			len1 += check_case(i, format, print);
-			if (len1 == 0)
+			if (len1 == -1)
 			{
 				_putchar(format[i]);
 				_putchar(format[i + 1]);
 				len += 2;
+				len1 = 0;
 			}
 			len += len1;
 			i++;

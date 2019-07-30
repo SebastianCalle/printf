@@ -54,15 +54,6 @@ int print_dx(int n)
 	return (count);
 }
 /**
- * print_prc - print porcent
- * Return: the count
- */
-int print_prc(void)
-{
-	_putchar(37);
-	return (1);
-}
-/**
  * print_b - convert integer to binary
  * @print: argument
  * Return: count print

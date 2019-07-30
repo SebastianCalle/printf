@@ -14,14 +14,14 @@ int check_case(int i, const char * const format, va_list print)
 		{"%s", print_s},
 		{"%i", print_d},
 		{"%d", print_d},
-		{"%%", print_prc},
 		{"%b", print_b},
 	};
 
 	j = 0;
-	len = 0;
-	while (j < 6)
+	len = -1;
+	while (j < 5)
 	{
+		len = 0;
 		if (format[i] == pp[j].c[0])
 		{
 			if (format[i + 1] == pp[j].c[1])
