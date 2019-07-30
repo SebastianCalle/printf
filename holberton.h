@@ -28,6 +28,8 @@ int print_b(va_list print);
 int _puts(char *str);
 int _putchar(char c);
 int _strlen(char *s);
+int rev_string(va_list print);
 int _puts(char *s);
+int rot13(va_list print);
 char *convert(unsigned int num, int base);
 #endif
