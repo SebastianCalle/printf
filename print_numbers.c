@@ -55,7 +55,6 @@ int print_dx(int n)
 }
 /**
  * print_prc - print porcent
- * @print: va_list argument
  * Return: the count
  */
 int print_prc(void)
@@ -64,7 +63,7 @@ int print_prc(void)
 	return (1);
 }
 /**
- * print_bin - convert integer to binary
+ * print_b - convert integer to binary
  * @print: argument
  * Return: count print
  */
