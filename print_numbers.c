@@ -6,44 +6,41 @@
  */
 int print_d(va_list print)
 {
-	int i, len, r, l;
-	unsigned int abs, num, numt;
-	int n = va_arg(print, int);
+	int n = va_arg(args, int);
+	int num, last = n % 10, digit, exp = 1;
+	int  i = 1;
 
-	len = 0;
-	i = 0;
-	r = 1;
-	l = 1;
-	if (n < 0)
+	n = n / 10;
+	num = n;
+
+	if (last < 0)
 	{
 		_putchar('-');
-		len++;
-		abs = -n;
-	} else
-	{
-		abs = n;
-	}
-
-	num = abs;
-	while (num > 0)
-	{
-		num /= 10;
+		num = -num;
+		n = -n;
+		last = -last;
 		i++;
 	}
+	if (num > 0)
+	{
+		while (num / 10 != 0)
+		{
+			exp = exp * 10;
+			num = num / 10;
+		}
+		num = n;
+		while (exp > 0)
+		{
+			digit = num / exp;
+			_putchar(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++;
+		}
+	}
+	_putchar(last + '0');
 
-	while (r < i)
-	{
-		l *= 10;
-		r++;
-	}
-	while (l >= 1)
-	{
-		numt = (abs / l) % 10;
-		_putchar(numt + '0');
-		len++;
-		l /= 10;
-	}
-	return (len);
+	return (i);
 }
 /**
  * print_b - convert integer to binary
