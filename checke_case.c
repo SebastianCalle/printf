@@ -15,11 +15,12 @@ int check_case(int i, const char * const format, va_list print)
 		{"%i", print_d},
 		{"%d", print_d},
 		{"%%", print_prc},
+		{"%b", prin_bin},
 	};
 
 	j = 0;
 	len = 0;
-	while (j < 5)
+	while (j < 6)
 	{
 		if (format[i] == pp[j].c[0])
 		{
