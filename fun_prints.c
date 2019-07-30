@@ -23,19 +23,19 @@ int print_c(va_list print)
 int print_s(va_list print)
 {
 	int i, count;
-	char n[] = "(nil)";
+	char n[] = "(null)";
 	char *s;
 
 	s = va_arg(print, char*);
 	count = 0;
 	if (s == NULL)
 	{
-		for (i = 0; n[i] != '0'; i++)
+		for (i = 0; n[i] != '\0'; i++)
 		{
 			_putchar(n[i]);
 			count++;
-
 		}
+		return (count);
 	}
 	for (i = 0; s[i] != '\0'; i++)
 	{

@@ -1,57 +1,90 @@
 #include "holberton.h"
 /**
- * print_d - call function printdx
- * @print: va_list
- * Return: the count of print
+ * print_d - Entry point
+ *@print: the integer to print
+ * Return: no return
  */
 int print_d(va_list print)
 {
-	int m = va_arg(print, int);
-	int c;
+	int n = va_arg(print, int);
+	int num, last = n % 10, digit, exp = 1;
+	int  i = 1;
 
-	c = 0;
-	c = print_dx(m);
+	n = n / 10;
+	num = n;
 
-	return (c);
+	if (last < 0)
+	{
+		_putchar('-');
+		num = -num;
+		n = -n;
+		last = -last;
+		i++;
+	}
+	if (num > 0)
+	{
+		while (num / 10 != 0)
+		{
+			exp = exp * 10;
+			num = num / 10;
+		}
+		num = n;
+		while (exp > 0)
+		{
+			digit = num / exp;
+			_putchar(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++;
+		}
+	}
+	_putchar(last + '0');
+
+	return (i);
 }
+
 /**
- * print_dx - print integers
- * @n: integer passed
- * Return: the count of print
- *
+ * print_u - Entry point
+ *@print: the integer to print
+ * Return: no return
  */
-int print_dx(int n)
+int print_u(va_list print)
 {
-	unsigned int m, d, c;
-	int count = 0;
+	unsigned int n = va_arg(print, int);
+	int num, last = n % 10, digit, exp = 1;
+	int  i = 1;
 
-	if (n < 0)
-	{
-		_putchar(45);
-		m = n * -1;
-		count++;
-	}
-	else
-	{
-		m = n;
-	}
+	n = n / 10;
+	num = n;
 
-	d = m;
-	c = 1;
-
-	while (d > 9)
+	if (last < 0)
 	{
-		d /= 10;
-		c *= 10;
-		count++;
+		_putchar('-');
+		num = -num;
+		n = -n;
+		last = -last;
+		i++;
 	}
-
-	for (; c >= 1; c /= 10)
+	if (num > 0)
 	{
-		_putchar(((m / c) % 10) + 48);
-		count++;
+		while (num / 10 != 0)
+		{
+			exp = exp * 10;
+			num = num / 10;
+		}
+		num = n;
+		while (exp > 0)
+		{
+			digit = num / exp;
+			_putchar(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++;
+		}
 	}
-	return (count);
+	_putchar(last + '0');
+
+	return (i);
 }
 
 /**

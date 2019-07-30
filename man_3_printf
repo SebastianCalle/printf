@@ -1,0 +1,70 @@
+.TH man 3 "30/7/2019" "0.1" "_printf man page"
+.SH NAME
+.B _printf
+- print formatted output conversion
+.SH SYNOPSIS
+.B #include "holberton.h"
+.PP
+.B #include <stdarg.h>
+.PP
+.B int _printf(const char * const format, ...)
+.PP
+.B int print_b(va_list print);
+.PP
+.B int _puts(char *str);
+.PP
+.B int _putchar(char c);
+.PP
+.B int print_b(va_list print);
+.PP
+.B int print_c(va_list print);
+.PP
+.B int print_s(va_list print);
+.PP
+.B int print_d(va_list print);
+.PP
+.B int print_bin(va_list print);
+.PP
+.B int print_dx(int n);
+.PP
+.B int rev_string(va_list print);
+.PP
+.B int rot13(va_list print);
+
+.SH DESCRIPTION
+_printf() produce output according to a format, write output to stdout.
+
+.SH RETURN VALUE
+Upon successful return, this function return the number of characters printed (excluding the null byte used to end output to strings).
+If an output error is encountered, a negative value is returned.
+.SH FORMAT
+The format string is a character string, beginning and ending in its initial shift state, if any. The format string is composed of zero or more directives: ordinary characters (not %), which are copied unchanged to the output stream
+
+printf("%d", num);
+.SH CONVERSION
+The character % is followed by A character that specifies the type of conversion to be applied.
+.B d, i
+The int argument is converted to signed decimal notation.
+.B c
+The c argument is converted to a char and is written
+.B s
+The s argument represents a string of characters, an expect an array
+.B o
+The o argument is converted to unsigned octal notation.
+.B x
+The x argument is converted to unsigned hexadecimal notation with the letters in lowercase.
+.B X
+The X argument is converted to unsigned hexadecimal notation with the letters in uppercase.
+.B b
+The b argument is converted to unsigned binary notation.
+.B r
+The r argument print the input in reverse order.
+.B R
+The R argument convert the input in root13 notation.
+
+.SH SEE ALSO
+.I printf(3), puts(3), putchar(3)
+.SH BUGS
+for now the function _printf It's in test
+.SH AUTHOR
+Written by Sebastian Montealegre And Edgar Quintero
