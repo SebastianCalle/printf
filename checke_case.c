@@ -27,7 +27,7 @@ int check_case(int i, const char * const format, va_list print)
 			if (format[i + 1] == pp[j].c[1])
 			{
 				len += pp[j].f(print);
-				i++;
+				break;
 			}
 		}
 		j++;
