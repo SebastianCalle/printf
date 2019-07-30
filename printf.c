@@ -24,7 +24,14 @@ int _printf(const char * const format, ...)
 			len1 += check_case(i, format, print);
 			if (len1 == 0)
 			{
-				if (va_arg(print, char *) == 0)
+				if (format[i + 1] == '\n')
+				{
+					len += _putchar('%');
+					len += _putchar('\n');
+					break;
+
+				}
+				else if (va_arg(print, char *) == 0)
 					i += 2;
 				len += _putchar(format[i]);
 				continue;
