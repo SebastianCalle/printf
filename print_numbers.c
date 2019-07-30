@@ -56,19 +56,19 @@ int print_dx(int n)
 /**
  * print_prc - print porcent
  * @print: va_list argument
- * Return: the count 
+ * Return: the count
  */
 int print_prc(void)
 {
 	_putchar(37);
-	return(1);
+	return (1);
 }
 /**
  * print_bin - convert integer to binary
- * @print: argument 
+ * @print: argument
  * Return: count print
  */
-int print_bin(va_list print)
+int print_b(va_list print)
 {
 	unsigned int c;
 	int  i, j;
