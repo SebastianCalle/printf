@@ -59,7 +59,7 @@ int print_dx(int n)
  * @print: argument 
  * Return: count print
  */
-int print_bin(va_list print)
+int print_b(va_list print)
 {
 	unsigned int c;
 	int  i, j;
