@@ -12,18 +12,15 @@ int _printf(const char * const format, ...)
 	va_start(print, format);
 	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
 		return (-1);
-	while (format != NULL && format[i])
+	while (format != NULL && format[i] != '\0')
 	{
 		if (format[i] != '%')
-			len += _putchar(format[i]);
+		{
+			_putchar(format[i]);
+			len++;
+		}
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '%')
-			{
-				len += _putchar('%');
-				if (format[i + 2] == '%')
-					i += 2;
-			}
 			len += check_case(i, format, print);
 			i++;
 

@@ -53,3 +53,13 @@ int print_dx(int n)
 	}
 	return (count);
 }
+/**
+ * print_prc - print porcent
+ * @print: va_list argument
+ * Return: the count 
+ */
+int print_prc(void)
+{
+	_putchar(37);
+	return(1);
+}
