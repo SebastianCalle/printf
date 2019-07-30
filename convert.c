@@ -79,7 +79,7 @@ int print_h(va_list print)
 		_putchar('0');
 		return (1);
 	}
-	while (num == 0)
+	while (num != 0)
 	{
 		k = num % 16;
 		if (k < 10)
@@ -113,7 +113,7 @@ int print_hx(va_list print)
 		_putchar('0');
 		return (1);
 	}
-	while (num == 0)
+	while (num != 0)
 	{
 		k = num % 16;
 		if (k < 10)
