@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include "holberton.h"
 /**
  * _printf - print anything
@@ -33,7 +31,6 @@ int _printf(const char * const format, ...)
 
 	i++;
 	}
-	printf("\n");
 	va_end(print);
 	return (len);
 }

@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include "holberton.h"
 /**
  * check_case - check the case of %
@@ -13,9 +11,9 @@ int check_case(int i, const char * const format, va_list print)
 	int j, len;
 	print_f pp[] = {
 		{"%c", print_c},
-		{"%i", print_i},
-		{"%d", print_d},
 		{"%s", print_s},
+		{"%i", print_d},
+		{"%d", print_d},
 	};
 
 	j = 0;

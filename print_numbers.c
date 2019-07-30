@@ -1,65 +1,57 @@
 #include "holberton.h"
 /**
- * print_i - print decimal numbers
- * @print: argument
- * Return: the count of print
- */
-int print_i(va_list print)
-{
-	int i, c;
-
-	i = va_arg(print, int);
-	c = 0;
-	if (i < 0)
-	{
-		i = -i;
-		_putchar('-');
-		c++;
-	}
-	c += _puts(convert(i, 10));
-	return (c);
-}
-/**
- * print_d - print decimal numbers
- * @print: argument
+ * print_d - call function printdx
+ * @print: va_list
  * Return: the count of print
  */
 int print_d(va_list print)
 {
-	int i, c;
+	int m = va_arg(print, int);
+	int c;
 
-	i = va_arg(print, int);
 	c = 0;
-	if (i < 0)
-	{
-		i = -i;
-		_putchar('-');
-		c++;
-	}
-	c += _puts(convert(i, 10));
+	c = print_dx(m);
+
 	return (c);
 }
 /**
- * convert - convert the num in base of parameter
- * @num: num to convert
- * @base: base from convert
- * Return: pointer convert
+ * print_dx - print integers
+ * @n: integer passed
+ * Return: the count of print
+ *
  */
-char *convert(unsigned int num, int base)
+int print_dx(int n)
 {
-	static char Representation[] = "0123456789ABCDEF";
-	static char buffer[50];
-	char *ptr;
+	unsigned int m, d, c;
+	int count = 0;
 
-	ptr = &buffer[49];
-	*ptr = '\0';
+	if (n < 0)
+	{
+		_putchar(45);
+		m = n * -1;
+		count++;
+	}
+	else
+	{
+		m = n;
+	}
 
-	do {
-		*--ptr = Representation[num % base];
-		num /= base;
-	} while (num != 0);
+	d = m;
+	c = 1;
 
-	return (ptr);
+	while (d > 9)
+	{
+		d /= 10;
+		c *= 10;
+		count++;
+	}
+
+	for (; c >= 1; c /= 10)
+	{
+		_putchar(((m / c) % 10) + 48);
+		count++;
+	}
+	return (count);
 }
 
 /**
