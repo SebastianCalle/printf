@@ -8,27 +8,31 @@
 
 int rot13(va_list print)
 {
-	int a, b;
-	char *s;
+	int i, j, counter = 0;
+	int k = 0;
+	char *s = va_arg(print, char*);
+	char alpha[] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+	char beta[] = {"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"};
 
-	char test[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char res[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-
-	s = va_arg(print, char *);
-	for (a = 0; s[a] != '\0'; a++)
+	if (s == NULL)
+		s = "(null)";
+	for (i = 0; s[i]; i++)
 	{
-		for (b = 0; test[b] != '\0'; b++)
+		k = 0;
+		for (j = 0; alpha[j] && !k; j++)
 		{
-			if (s[a] == test[b])
+			if (s[i] == alpha[j])
 			{
-				s[a] = res[b];
-				break;
+				_putchar(beta[j]);
+				counter++;
+				k = 1;
 			}
 		}
+		if (!k)
+		{
+			_putchar(s[i]);
+			counter++;
+		}
 	}
-	for (a = 0; s[a] != '\0'; a++)
-	{
-		_putchar(s[a]);
-	}
-	return (a);
+	return (counter);
 }
