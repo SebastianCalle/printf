@@ -53,3 +53,32 @@ int print_dx(int n)
 	}
 	return (count);
 }
+
+/**
+ * print_bin - convert integer to binary
+ * @print: argument 
+ * Return: count print
+ */
+int print_bin(va_list print)
+{
+	unsigned int c;
+	int  i, j;
+	int b[100]; /* create array to save the binary */
+
+	num = va_arg(print, int);
+	i = 0;
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	while (num > 0)
+	{
+		b[i] = num % 2;   /* modulo two */
+		num = num / 2;      /* and divide in two */
+		i++;
+	}
+	for (j = i - 1; j >= 0; j--)
+		_putchar(b[j] + '0');
+	return (i);
+}
