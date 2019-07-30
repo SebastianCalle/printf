@@ -20,15 +20,17 @@ int check_case(int i, const char * const format, va_list print)
 	};
 
 	j = 0;
-	len = 0;
+	len = -1;
 	while (j < 7)
 	{
 		if (format[i] == pp[j].c[0])
 		{
 			if (format[i + 1] == pp[j].c[1])
 			{
+				len = 0;
 				len += pp[j].f(print);
 				i++;
+				break;
 			}
 		}
 		j++;
