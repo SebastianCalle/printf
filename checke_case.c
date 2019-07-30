@@ -21,12 +21,12 @@ int check_case(int i, const char * const format, va_list print)
 	len = -1;
 	while (j < 5)
 	{
-		len = 0;
 		if (format[i] == pp[j].c[0])
 		{
 			if (format[i + 1] == pp[j].c[1])
 			{
 				len += pp[j].f(print);
+				len++;
 				break;
 			}
 		}

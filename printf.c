@@ -25,6 +25,8 @@ int _printf(const char * const format, ...)
 			{
 				len++;
 				_putchar('%');
+				i++;
+				continue;
 			}
 			else if (format[i + 1] == '\0')
 				return (-1);
