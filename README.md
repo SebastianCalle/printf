@@ -48,17 +48,16 @@ typedef struct print_type
 	     } print_f;
 
 print_f pp[] = {
-	     {"%c", print_c},
-			{"%s", print_s},
-				{"%i", print_d},
-					{"%d", print_d},
-						{"%b", print_b},
-							{"%o", print_o},
-								{"%x", print_X},
-									{"%X", print_XC},
-										{"%r", rev_string},
-											{"%R", rot13}
-											       };
-
+	       {"%c", print_c},
+	       {"%s", print_s},
+	       {"%i", print_d},
+	       {"%d", print_d},
+	       {"%b", print_b},
+	       {"%o", print_o},
+	       {"%x", print_X},
+	       {"%X", print_XC},
+	       {"%r", rev_string},
+	       {"%R", rot13}
+	       };
 
 ```
