@@ -29,22 +29,18 @@ int _printf(const char * const format, ...)
 					len += _putchar('%');
 					len += _putchar('\n');
 					break;
-
 				}
 				else if (va_arg(print, char *) == 0)
 					i += 2;
 				len += _putchar(format[i]);
 				continue;
-
 			}
 			len += len1;
 			len1 = 0;
 			i++;
 		}
 		else if (format[i] != '%' && format[i] != '\0')
-		{
 			len += _putchar(format[i]);
-		}
 	}
 	va_end(print);
 	return (len);
