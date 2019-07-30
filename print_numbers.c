@@ -69,7 +69,7 @@ int print_prc(void)
  */
 int print_b(va_list print)
 {
-	unsigned int c;
+	unsigned int num;
 	int  i, j;
 	int b[100]; /* create array to save the binary */
 
