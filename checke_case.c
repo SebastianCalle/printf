@@ -16,6 +16,7 @@ int check_case(int i, const char * const format, va_list print)
 		{"%h", print_h},
 		{"%H", print_hx},
 		{"%i", print_d},
+		{"%u", print_u},
 		{"%d", print_d},
 		{"%b", print_b},
 		{"%r", rev_string},
@@ -24,7 +25,7 @@ int check_case(int i, const char * const format, va_list print)
 
 	j = 0;
 	len = -1;
-	while (j < 10)
+	while (j < 11)
 	{
 		if (format[i] == pp[j].c[0])
 		{
