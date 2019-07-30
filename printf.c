@@ -6,40 +6,36 @@
  */
 int _printf(const char * const format, ...)
 {
-	int i = 0, len1 = 0, len = 0;
+	unsigned int i = 0, len1 = 0, len = 0;
 	va_list print;
 
 	va_start(print, format);
-	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	for (i = 0; format != NULL && format[i] != '\0'; i++)
 	{
-		if (format[i] != '%' && format[i] != '\0')
+		if (format[i] == '%' && format[i + 1] == '%')
 		{
-			_putchar(format[i]);
-			len++;
+			len += _putchar('%');
+			i++;
 		}
-		if (format[i] == '%')
+		else if (format[i] == '%')
 		{
-			if (format[i + 1] == '%')
-			{
-				len++;
-				_putchar('%');
-				i++;
-				continue;
-			}
-			else if (format[i + 1] == '\0')
-				return (-1);
 			len1 += check_case(i, format, print);
-			if (len1 == -1)
+			if (len1 == 0)
 			{
-				_putchar(format[i]);
-				_putchar(format[i + 1]);
-				len += 2;
-				len1 = 0;
+				if (va_arg(print, char *) == 0)
+					i += 2;
+				len += _putchar(format[i]);
+				continue;
+
 			}
 			len += len1;
 			i++;
+		}
+		else if (format[i] != '%' && format[i] != '\0')
+		{
+			len += _putchar(format[i]);
 		}
 	}
 	va_end(print);
