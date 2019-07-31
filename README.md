@@ -1,7 +1,14 @@
+![](https://uploads-ssl.webflow.com/5b0fe6b5acd20859e6fbac66/5b1641a1e46275621a2b436d_Holberton-Logo-final.png)
+
 # _printf 📄
 
 A little printf project
 A formatted output conversion C program completed as part of the low-level programming at Holberton School.
+
+### Authors
+
+[Sebastian Montealegre](https://github.com/SebastianCalle) and
+[Edgar Quintero](https://github.com/alzheimeer)
 
 ## Dependencies
 The _printf function was coded on an Ubuntu 14.04 LTS with gcc version 4.8
@@ -12,7 +19,7 @@ Exist a structure for the format specifiers.
 It is included the prototipe of the functions in the holberton.h file.
 
 ## What are Printf Function in C?
-see Printf man(3)
+See Printf man(3)
 The C library function int printf(const char *format, ...) sends formatted output to stdout.
 
 ## usage example
@@ -143,3 +150,4 @@ int main(void)
     _printf("%R\n", "Hello, World");
 }
 Output: Uryyb, Jbeyq
+
