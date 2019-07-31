@@ -39,7 +39,7 @@ int print_o(va_list print)
 {
 	int  i, j;
 	unsigned int num;
-	int b[100]; 
+	int b[100];
 
 	num = va_arg(print, int);
 	i = 0;
