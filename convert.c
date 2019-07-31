@@ -8,7 +8,7 @@ int print_b(va_list print)
 {
 	unsigned int num;
 	int  i, j;
-	int b[100]; /* create array to save the binary */
+	int b[100];
 
 	num = va_arg(print, int);
 	i = 0;
@@ -19,8 +19,8 @@ int print_b(va_list print)
 	}
 	while (num > 0)
 	{
-		b[i] = num % 2;   /* modulo two */
-		num = num / 2;      /* and divide in two */
+		b[i] = num % 2;
+		num = num / 2;
 		i++;
 	}
 	for (j = i - 1; j >= 0; j--)
