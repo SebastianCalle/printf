@@ -25,7 +25,7 @@ int _printf(const char * const format, ...)
 			len1 += check_case(i, format, print);
 			if (len1 == -1)
 			{
-				if (format[i + 1] == 10)
+				if (format[i + 1] == '\n')
 				{
 					len += _putchar('%');
 					len += _putchar('\n');

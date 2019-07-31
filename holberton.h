@@ -28,6 +28,8 @@ int print_dx(int n);
 int print_b(va_list print);
 int print_o(va_list print);
 int print_u(va_list print);
+int print_ptr(va_list print);
+int print_h_ax(unsigned long int a);
 int _puts(char *str);
 int _putchar(char c);
 int _strlen(char *s);
