@@ -68,3 +68,78 @@ print_f pp[] = {
 	       };
 
 ```
+
+Conversion Specifiers
+
+The conversion specifier (introduced by the character %) is a character that specifies the type of conversion to be applied. 
+The _printf function supports the following conversion specifiers:
+
+**d**, **i**
+The int argument is converted to signed decimal notation.
+
+Example main.c:
+
+int main(void)
+{
+    _printf("%d\n", 7);
+}
+
+Output: 7
+
+**b**
+The unsigned int argument is converted to signed decimal notation.
+
+Example main.c:
+
+int main(void)
+{
+    _printf("%b\n", 7);
+}
+Output: 111
+
+**o**, **u**, **x**, **X**
+The unsigned int argument is converted to unsigned octal (o), unsigned decimal (u), or unsigned hexadecimal (x and X). The letters abcdef are used for x conversions and the letters ABCDEF are used for X conversions.
+
+Example main.c:
+
+int main(void)
+{
+    _printf("%o\n", 77);
+}
+Output: 115
+
+**c**
+
+The int argument is converted to an unsigned char.
+
+Example main.c:
+
+int main(void)
+{
+    _printf("%c\n", 48);
+}
+Output: 0
+
+**s**
+
+The const char * argument is expected to be a pointer to a character array (aka. pointer to a string). Characters from the array are written starting from the first element of the array and ending at, but not including, the terminating null byte (\0).
+
+Example main.c:
+
+int main(void)
+{
+    _printf("%s\n", "Hello, World!");
+}
+Output: Hello, World!
+
+**R**
+
+Identical to the s conversion specifier, except each character of the array is converted to its corresponding character in ROT13 before being written.
+
+Example main.c:
+
+int main(void)
+{
+    _printf("%R\n", "Hello, World");
+}
+Output: Uryyb, Jbeyq
