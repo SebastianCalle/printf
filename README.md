@@ -47,7 +47,7 @@ Call the function whit one of these options
 
 _printf("%c \n This is a char", 'h');
 
-```struct
+```struct  is the basis for selecting the parameter entered
 typedef struct print_type
 {
 	char *c;
