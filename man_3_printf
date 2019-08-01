@@ -2,6 +2,9 @@
 .SH NAME
 .B _printf
 - print formatted output conversion
+.SH DESCRIPTION
+_printf() produce output according to a format, write output to stdout.
+
 .SH SYNOPSIS
 .B #include "holberton.h"
 .PP
@@ -30,10 +33,22 @@
 .B int rev_string(va_list print);
 .PP
 .B int rot13(va_list print);
-
-.SH DESCRIPTION
-_printf() produce output according to a format, write output to stdout.
-
+.PP
+.SH EXAMPLES
+.B Example main.c:
+.PP
+.PP
+int main(void) { _printf("%d\n", 7); } Output: 7
+.PP
+int main(void) { _printf("%b\n", 7); } Output: 111
+.PP
+int main(void) { _printf("%o\n", 77); } Output: 115
+.PP
+int main(void) { _printf("%c\n", 'H'); } Output: H
+.PP
+int main(void) { _printf("%s\n", "Hello, World!"); } Output: Hello, World!
+.PP
+int main(void) { _printf("%R\n", "Hello, World"); } Output: Uryyb, Jbeyq
 .SH RETURN VALUE
 Upon successful return, this function return the number of characters printed (excluding the null byte used to end output to strings).
 If an output error is encountered, a negative value is returned.
