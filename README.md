@@ -1,6 +1,6 @@
 ![](https://uploads-ssl.webflow.com/5b0fe6b5acd20859e6fbac66/5b1641a1e46275621a2b436d_Holberton-Logo-final.png)
 
-# _printf 📄
+# Small clone of the function _printf in C📄
 
 A little printf project
 A formatted output conversion C program completed as part of the low-level programming at Holberton School.
